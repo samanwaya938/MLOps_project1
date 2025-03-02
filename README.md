@@ -18,8 +18,8 @@ Welcome to this MLOps project, designed to demonstrate a robust pipeline for man
 ### Step 3: Virtual Environment and Dependencies
 - Create a virtual environment and install required dependencies from `requirements.txt`:
   ```bash
-  conda create -n vehicle python=3.10 -y
-  conda activate vehicle
+  python -m venv vehicle
+  vehicle\scripts\activate
   pip install -r requirements.txt
   ```
 - Verify the local packages by running:
