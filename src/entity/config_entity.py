@@ -54,16 +54,25 @@ class ModelTrainerConfig:
 
 @dataclass
 class ModelEvaluationConfig:
-    changed_threshold_score: float = MODEL_EVALUATION_CHANGED_THRESHOLD_SCORE
-    bucket_name: str = MODEL_BUCKET_NAME
-    s3_model_key_path: str = MODEL_FILE_NAME
+    # This is approch for model evaluation using AWS S3
 
-@dataclass
-class ModelPusherConfig:
-    bucket_name: str = MODEL_BUCKET_NAME
-    s3_model_key_path: str = MODEL_FILE_NAME
+    # changed_threshold_score: float = MODEL_EVALUATION_CHANGED_THRESHOLD_SCORE
+    # bucket_name: str = MODEL_BUCKET_NAME
+    # s3_model_key_path: str = MODEL_FILE_NAME
 
-@dataclass
-class VehiclePredictorConfig:
-    model_file_path: str = MODEL_FILE_NAME
-    model_bucket_name: str = MODEL_BUCKET_NAME
+    # This is approch for model evaluation using local file system
+
+    best_model_path: str = os.path.join(training_pipeline_config.artifact_dir, MODEL_EVALUATION_DIR_NAME,
+                                        MODEL_EVALUATION_REPORT_NAME)        
+    output_report_path: str = os.path.join(best_model_path, MODEL_EVALUATION_REPORT_NAME)
+
+
+# @dataclass
+# class ModelPusherConfig:
+#     bucket_name: str = MODEL_BUCKET_NAME
+#     s3_model_key_path: str = MODEL_FILE_NAME
+
+# @dataclass
+# class VehiclePredictorConfig:
+#     model_file_path: str = MODEL_FILE_NAME
+#     model_bucket_name: str = MODEL_BUCKET_NAME

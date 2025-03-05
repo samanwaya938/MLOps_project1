@@ -66,9 +66,13 @@ MIN_SAMPLES_SPLIT_RANDOM_STATE: int = 101
 """
 MODEL Evaluation related constants
 """
-MODEL_EVALUATION_CHANGED_THRESHOLD_SCORE: float = 0.02
-MODEL_BUCKET_NAME = "my-model-mlopsproj"
-MODEL_PUSHER_S3_KEY = "model-registry"
+# MODEL_EVALUATION_CHANGED_THRESHOLD_SCORE: float = 0.02     # This is for S3 buucket
+# MODEL_BUCKET_NAME = "my-model-mlopsproj"                   # This is for S3 buucket
+# MODEL_PUSHER_S3_KEY = "model-registry"                     # This is for S3 buucket
+
+MODEL_EVALUATION_DIR_NAME: str = "model_evaluation"          # This is for local file system
+MODEL_EVALUATION_REPORT_NAME: str = "eval_report.yaml"       # This is for local file system
+
 
 
 APP_HOST = "0.0.0.0"

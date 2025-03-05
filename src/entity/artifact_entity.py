@@ -33,7 +33,8 @@ class ModelTrainerArtifact:
 class ModelEvaluationArtifact:
     is_model_accepted:bool
     changed_accuracy:float
-    s3_model_path:str 
+    # s3_model_path:str          # This is used in case of S3
+    evaluation_report_path: str  # This is used in case of local file system
     trained_model_path:str
 
 @dataclass
