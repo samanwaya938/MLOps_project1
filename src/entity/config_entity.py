@@ -62,9 +62,13 @@ class ModelEvaluationConfig:
 
     # This is approch for model evaluation using local file system
 
-    best_model_path: str = os.path.join(training_pipeline_config.artifact_dir, MODEL_EVALUATION_DIR_NAME,
-                                        MODEL_EVALUATION_REPORT_NAME)        
-    output_report_path: str = os.path.join(best_model_path, MODEL_EVALUATION_REPORT_NAME)
+    
+    best_model_path: str = os.path.join(training_pipeline_config.artifact_dir, 
+                                      MODEL_EVALUATION_DIR_NAME, 
+                                      MODEL_FILE_NAME)
+    report_path: str = os.path.join(training_pipeline_config.artifact_dir, 
+                                  MODEL_EVALUATION_DIR_NAME, 
+                                  MODEL_EVALUATION_REPORT_NAME)
 
 
 # @dataclass
